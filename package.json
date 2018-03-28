@@ -1,5 +1,25 @@
 {
-  "dependencies": {
-    "express": "^4.16.3"
-  }
+    "dependencies": {
+        "express": "^4.16.3",
+        "mongodb": "^3.0.5",
+        "mysql": "^2.15.0"
+    },
+    "name": "collin-server",
+    "version": "0.0.1",
+    "description": "collecting links",
+    "main": "app.js",
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tincher/collins-server.git"
+    },
+    "author": "tincher",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/tincher/collins-server/issues"
+    },
+    "homepage": "https://github.com/tincher/collins-server#readme"
 }
