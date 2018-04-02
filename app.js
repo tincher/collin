@@ -40,7 +40,7 @@ app.post('/delete', (req, res) => {
 });
 
 
-app.get('/getAll', (req, res) => {
+app.get('/all', (req, res) => {
     MongoClient.connect(url, (err, db) => {
         if (err) throw err;
         var collindb = db.db('collindb').collection('collin');
