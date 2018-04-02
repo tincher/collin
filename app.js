@@ -25,8 +25,17 @@ app.post('/add', (req, res) => {
     res.send("hat klappt")
 });
 
-
-
+app.get('/getAll', (req, res) => {
+    MongoClient.connect(url, (err, db) => {
+        if (err) throw err;
+        var collindb = db.db("collindb").collection("collin");
+        collindb.find({}).toArray(function(err, result) {
+            if (err) throw err;
+            db.close();
+            res.send(result);
+        });
+    });
+});
 
 function insertOneInDB(doc) {
     MongoClient.connect(url, (err, db) => {
