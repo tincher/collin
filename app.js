@@ -31,6 +31,7 @@ app.post('/delete', (req, res) => {
         if (err) throw err;
         var collindb = db.db('collindb').collection('collin');
         let query = req.body;
+        delete query._id;
         collindb.deleteOne(query, (err, obj) => {
             if (err) throw err;
             res.send('doc deleted');
