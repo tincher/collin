@@ -3,6 +3,7 @@ var mysql = require('mysql');
 var bodyParser = require('body-parser');
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/";
+var cors = require('cors');
 
 const app = express();
 
@@ -10,6 +11,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
     extended: true
 }));
+app.use(cors());
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'));
 
@@ -22,6 +24,9 @@ app.post('/add', (req, res) => {
     insertOneInDB(req.body);
     res.send("hat klappt")
 });
+
+
+
 
 function insertOneInDB(doc) {
     MongoClient.connect(url, (err, db) => {
