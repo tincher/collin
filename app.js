@@ -11,22 +11,6 @@ app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
     extended: true
 }));
 
-MongoClient.connect(url, (err, db) => {
-    if (err) throw err;
-    var collindb = db.db("collindb").collection("collin");
-    var myobj = {
-        name: "asldfj",
-        wasandres: "asdölfjasdlk"
-    };
-    collindb.insertOne(myobj, (err, res) => {
-        if (err) throw err;
-        console.log("Inserted succesfully");
-    });
-    db.close();
-});
-
-
-
 app.listen(3000, () => console.log('Example app listening on port 3000!'));
 
 app.get('/test', (req, res) => {
